@@ -1,48 +1,38 @@
-# Cyber_Threat_Classification_Using_Machine_Learning
+# 🚀 Cybersecurity Threat Classification Using Machine Learning
 
- Cybersecurity Threat Classification Using Machine Learning
-📌 Project Overview
-This project focuses on cybersecurity threat classification using machine learning. The goal is to detect cyber-attacks based on network traffic data using Random Forest and Support Vector Machines (SVM).
+## 📌 Project Overview
+This project aims to detect **cybersecurity threats** using **Machine Learning** techniques. We have implemented **Random Forest** and **Support Vector Machine (SVM)** classifiers on network traffic data to classify attack and normal traffic.  
 
-📂 Dataset
-The dataset contains network traffic features labeled as attack or normal.
+## 📂 Dataset Information
+- The dataset contains **network traffic features** labeled as **attack** (1) or **normal** (0).
+- **Preprocessing Steps:**
+  - Removed unnecessary columns: `id`, `timestamp`, `src_ip`, `dst_ip`.
+  - Standardized data for better model performance.
 
-Features like src_ip, dst_ip, and timestamp were removed as they were not relevant for classification.
+## 🛠️ Feature Selection
+- **Correlation Analysis**: Identified and removed redundant features.
+- **Random Forest Feature Importance**: Selected the most significant features.
+- **Recursive Feature Elimination (RFE)**: Picked the top 5 best features.
 
-🛠️ Preprocessing & Feature Selection
-Data Cleaning: Removed unnecessary columns (id, timestamp, src_ip, dst_ip).
+## 🧠 Machine Learning Models
+We trained and compared the following models:
+- **Random Forest Classifier** (with GridSearchCV optimization)
+- **Support Vector Machine (SVM)**
 
-Feature Selection:
-Correlation Analysis: Identified redundant features.
-Random Forest Feature Importance: Selected key features.
-Recursive Feature Elimination (RFE): Picked the top 5 important features.
+## 📊 Evaluation Metrics
+| Model | Accuracy | Precision | Recall | F1-Score |
+|--------|---------|-----------|--------|----------|
+| Random Forest | 91% | 0.91 | 1.00 | 0.95 |
+| SVM | 91% | 0.91 | 1.00 | 0.95 |
 
-🧠 Machine Learning Models Used
-Random Forest Classifier (Baseline & Optimized with GridSearchCV)
-Support Vector Machine (SVM)
+- **Confusion Matrices** showed that both models had trouble detecting attack cases due to class imbalance.
 
-📊 Evaluation & Results
-  Model       	Accuracy  	Precision 	Recall	 F1-Score
-Random Forest	: 91%	       0.91	       1.00	      0.95
-SVM:            91%	       0.91       	1.00	      0.95
-Confusion matrices showed poor detection of attack samples (Class 1).
+## 📈 Visualizations
+- **Feature Correlation Matrix**
+- **Feature Importance (Random Forest)**
+- **Confusion Matrices for RF & SVM**
 
-Class imbalance issue affected recall for attack detection.
-
-📈 Visualizations
-Correlation Matrix Heatmap
-Feature Importance (Random Forest)
-Confusion Matrices for RF & SVM
-
-⚡ How to Run the Code
-1️⃣ Install Dependencies
+## ⚡ How to Run the Project
+### **1️⃣ Install Dependencies**
+```bash
 pip install pandas numpy scikit-learn matplotlib seaborn
-2️⃣ Run the Jupyter Notebook
-Open cybersecurity_classification.ipynb
-
-Run all cells to train models and generate results
-
-🚀 Future Improvements
-Use SMOTE to handle class imbalance  
-Explore Deep Learning (e.g., Neural Networks)
-Optimize SVM hyperparameters for better attack detection
